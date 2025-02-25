@@ -22,4 +22,4 @@ demo_object_probeQN.ipynb - ptychography reconstruction of the object and probe 
 Google Colab
 ============
 
-The code can be quickly testes in Google Colab, without installation any packages. See video guidance https://anl.box.com/s/gk9k8fjb7zsmy1qkshvnetdytiotpja0
+The code can be quickly tested in Google Colab, without installation any packages. See video guidance https://anl.box.com/s/gk9k8fjb7zsmy1qkshvnetdytiotpja0
