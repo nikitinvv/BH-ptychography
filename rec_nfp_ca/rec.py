@@ -56,7 +56,8 @@ class Rec:
                     self.stream[igpu][k] = cp.cuda.Stream(non_blocking=False)
                 fx = cp.fft.fftfreq(nq * 2, d=voxelsize).astype("float32")
                 [fx, fy] = cp.meshgrid(fx, fx)
-                self.fker[igpu] = cp.exp(-1j * cp.pi * wavelength * distance * (fx**2 + fy**2))
+                unimod = np.exp(1j * 2*np.pi* distance /wavelength)
+                self.fker[igpu] = cp.exp(-1j * cp.pi * wavelength * distance * (fx**2 + fy**2))#*unimod
                 self.pool_inp[igpu] = ThreadPoolExecutor(16 // ngpus)    
                 self.pool_out[igpu] = ThreadPoolExecutor(16 // ngpus)
             
